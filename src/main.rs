@@ -6,10 +6,11 @@ use std::io::{Write, BufReader, BufRead, ErrorKind};
 use std::fs::File;
 use std::cmp::Ordering;
 
-fn get_sum_3(x: i32, y: i32) -> i32 {
-    return x + y;
+fn get_2(x: i32) -> (i32, i32) {
+    return (x + 1, x + 2);
 }
 
 fn main() {
-    println!("{}", get_sum_3(5, 4));
+    let (val_1, val_2) = get_2(3);
+    println!("Nums : {} {}", val_1, val_2);
 }
