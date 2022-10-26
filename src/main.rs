@@ -20,26 +20,6 @@ use std::cmp::Ordering;
 
 fn main() {
     let str1 = String::from("World");
-    let str2 = str1;
+    let str2 = str1.clone();
     println!("Hello {}", str1);
-/* THIS CODE WON'T COMPILE:
-   Compiling rust_tutorial v0.1.0 (/Users/datique/lab/training/rust/derek-banas-video-course/rust_tutorial)
-error[E0382]: borrow of moved value: `str1`
-  --> src/main.rs:24:26
-   |
-22 |     let str1 = String::from("World");
-   |         ---- move occurs because `str1` has type `String`, which does not implement the `Copy` trait
-23 |     let str2 = str1;
-   |                ---- value moved here
-24 |     println!("Hello {}", str1);
-   |                          ^^^^ value borrowed here after move
-   |
-   = note: this error originates in the macro `$crate::format_args_nl` which comes from the expansion of the macro `println` (in Nightly builds, run with -Z macro-backtrace for more info)
-
-For more information about this error, try `rustc --explain E0382`.
-error: could not compile `rust_tutorial` due to previous error
-
- *  The terminal process "cargo 'run', '--package', 'rust_tutorial', '--bin', 'rust_tutorial'" terminated with exit code: 101. 
- *  Terminal will be reused by tasks, press any key to close it. 
-*/
 }
