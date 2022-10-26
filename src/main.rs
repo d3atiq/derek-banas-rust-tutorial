@@ -6,10 +6,10 @@ use std::io::{Write, BufReader, BufRead, ErrorKind};
 use std::fs::File;
 use std::cmp::Ordering;
 
-fn say_hello() {
-    println!("Hello");
+fn get_sum(x: i32, y: i32) {
+    println!("{} + {} = {}", x, y, x+y);
 }
 
 fn main() {
-    say_hello();
+    get_sum(5, 4);
 }
