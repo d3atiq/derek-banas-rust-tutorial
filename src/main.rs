@@ -6,20 +6,28 @@ use std::io::{Write, BufReader, BufRead, ErrorKind};
 use std::fs::File;
 use std::cmp::Ordering;
 
-// Stack : Stores values in a last in first out format
-// Data on the stack must have a defined fixed size
+fn print_str(x: String) {
+    println!("A string {}", x);
+}
 
-// Heap : When putting data on the heap you request a 
-// certain amount of space. The OS finds space available and 
-// returns an address for that space called a pointer.
+fn print_return_str(x: String) -> String {
+    println!("A string {}", x);
+    x
+}
 
-// RULES
-    // 1. Each value has a variable that's called its owner
-    // 2. There is only one owner at a time
-    // 3. When the owner goes out of scope the value disappears
+fn change_string(name: &mut String) {
+    name.push_str(" is happy");
+    println!("Message : {}", name);
+}
 
 fn main() {
-    let str1 = String::from("World");
+    let mut str1 = String::from("Derek");
     let str2 = str1.clone();
-    println!("Hello {}", str1);
+    
+    //print_str(str1);
+
+    //let str3 = print_return_str(str1);
+    //println!("str3 = {}", str3);
+
+    change_string(&mut str1);
 }
